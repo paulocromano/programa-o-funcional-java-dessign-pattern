@@ -3,6 +3,7 @@ package builder.service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.function.BiConsumer;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
@@ -25,9 +26,9 @@ public class PessoaService implements ExecuteService {
 	@Override
 	public void execute() {
 		//this.filtrarPessoasPorSexo(Sexo.FEMININO);
-		this.filtrarPessoasPeloEstadoCivil(EstadoCivil.CASADO);
+		//this.filtrarPessoasPeloEstadoCivil(EstadoCivil.CASADO);
 		//this.filtrarPessoasQuePossuemFilhos();
-		//this.encontrarPrimeiraPessoaComNomeIgual("Joaquim");
+		this.encontrarPrimeiraPessoaComNomeIgual("Joaquim");
 	}
 	
 	
@@ -68,8 +69,40 @@ public class PessoaService implements ExecuteService {
 		nomes.forEach(System.out::println);
 	}
 	
+//	public void filtrarPessoasQuePossuemFilhos() {				
+//		List<String> nomes = new ArrayList<>();
+//		
+//		for (Pessoa pessoa : this.pessoas) {
+//			if (Objects.nonNull(pessoa.getQuantidadeFilhos())
+//				&& pessoa.getQuantidadeFilhos() > 0) {
+//				nomes.add(pessoa.getNome());
+//			}
+//		}
+//		
+//		System.out.println("Filtragem de pessoas que possuem filhos");
+//		nomes.forEach(System.out::println);
+//	}
+	
 	public void encontrarPrimeiraPessoaComNomeIgual(String nome) {
 		this.pessoas.stream().filter(pessoa -> pessoa.getNome().contains(nome))
 			.findFirst().ifPresentOrElse(System.out::println, () -> System.out.println("Pessoa não encontrada!"));
 	}
+	
+//	public void encontrarPrimeiraPessoaComNomeIgual(String nome) {
+//		Optional<Pessoa> optionalPessoa = Optional.empty();
+//		
+//		for (Pessoa pessoa : this.pessoas) {
+//			if (pessoa.getNome().contains(nome)) {
+//				optionalPessoa = Optional.of(pessoa);
+//				break;
+//			}
+//		}
+//		
+//		if (optionalPessoa.isPresent()) {
+//			System.out.println(optionalPessoa.get());
+//		}
+//		else {
+//			System.out.println("Pessoa não encontrada!");
+//		}
+//	}
 }

@@ -24,8 +24,8 @@ public class AlunoService implements ExecuteService {
 	@Override
 	public void execute() {
 		//this.exibirMediaFinalDosAlunos();
-		//this.calcularMediaGeralDosAlunosNoPrimeiroSemestre();
-		this.calcularMediaGeralDosAlunosNoSegundoSemestre();
+		this.calcularMediaGeralDosAlunosNoPrimeiroSemestre();
+		//this.calcularMediaGeralDosAlunosNoSegundoSemestre();
 	}
 
 	public void exibirMediaFinalDosAlunos() {

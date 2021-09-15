@@ -54,6 +54,25 @@ public class ProdutoService implements ExecuteService {
 		produtoMaisCaro.ifPresent(System.out::println);
 	}
 	
+//	public void buscarProdutoMaisCaro() {
+//		Optional<ProdutoComponent> optionalProdutoMaisCaro = Optional.empty();
+//		
+//		if (!this.produtoComposite.getProdutos().isEmpty()) {
+//			ProdutoComponent produtoMaisCaro = this.produtoComposite.getProdutos().get(0);
+//			
+//			for (ProdutoComponent produto : this.produtoComposite.getProdutos()) {
+//				if (produto.getPreco() > produtoMaisCaro.getPreco()) {
+//					produtoMaisCaro = produto;
+//				}
+//			}
+//			
+//			optionalProdutoMaisCaro = Optional.of(produtoMaisCaro);
+//		}
+//		
+//		System.out.println("Produto mais caro");
+//		optionalProdutoMaisCaro.ifPresent(System.out::println);
+//	}
+	
 	public void exibirEstatiscasDosProdutos() {
 		DoubleSummaryStatistics estatisticas =  this.produtoComposite.getProdutos().stream()
 				.collect(Collectors.summarizingDouble(ProdutoComponent::getPreco));

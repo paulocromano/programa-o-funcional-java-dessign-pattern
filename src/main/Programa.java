@@ -5,7 +5,7 @@ import util.Service;
 public class Programa {
 
 	public static void main(String[] args) {
-		ExecuteService executeService = Service.CLIENTE_ADAPTER.getService();
+		ExecuteService executeService = Service.MOTO_FACTORY_METHOD.getService();
 		
 		executeService.execute();
 	}
